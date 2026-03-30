@@ -5,21 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nardi Hausmeister & Montagebetrieb</title>
     <meta name="description" content="Nardi Hausmeister & Montagebetrieb in Katzweiler. Fenster- und Türmontage, Renovierung, Gartenarbeiten, Möbelmontage, Winterdienst und mehr.">
-    <meta name="theme-color" content="#cd4e3a">
+    <meta name="theme-color" content="#c73e2e">
     <meta property="og:title" content="Nardi Hausmeister & Montagebetrieb">
     <meta property="og:description" content="Zuverlässiger Hausmeister- und Montageservice in Katzweiler und Umgebung.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --accent: #cd4e3a;
-            --accent-strong: #b73f2d;
-            --ink: #2d2a2a;
-            --muted: #5c5858;
-            --paper: #f8f7f3;
-            --line: #e8e2dc;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -27,399 +18,436 @@
         }
 
         body {
-            font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
-            color: var(--ink);
-            background: radial-gradient(circle at 20% 10%, #f3efe9 0%, #ece6df 40%, #e2dad1 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e85a4f 0%, #d64535 50%, #c73e2e 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px;
+            padding: 20px;
         }
 
-        .flyer {
-            width: min(1080px, 100%);
-            background: var(--paper);
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 24px 70px rgba(38, 33, 31, 0.25);
-            border: 1px solid #ddd6cf;
-            display: grid;
-            grid-template-columns: 1.28fr 0.72fr;
-        }
-
-        .left,
-        .right {
-            padding: 38px 34px;
-        }
-
-        .left {
-            position: relative;
-            background:
-                linear-gradient(130deg, rgba(205, 78, 58, 0.1) 0 17%, transparent 17%),
-                var(--paper);
-        }
-
-        .right {
-            border-left: 6px solid var(--accent);
-            background: linear-gradient(180deg, #f7f4ef 0%, #f3eee8 100%);
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 18px;
-        }
-
-        .brand i {
-            color: var(--accent);
-            font-size: 29px;
-            margin-top: 6px;
-        }
-
-        .brand h1 {
-            font-size: clamp(34px, 5.2vw, 56px);
-            line-height: 1;
-            letter-spacing: -0.02em;
-            color: var(--accent);
-            margin-bottom: 4px;
-        }
-
-        .brand p {
-            font-size: clamp(25px, 2.5vw, 46px);
-            line-height: 1.12;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        .intro {
-            margin-top: 8px;
-            font-size: clamp(20px, 2.05vw, 29px);
-            line-height: 1.25;
-            font-weight: 600;
-        }
-
-        .highlight {
-            color: var(--accent);
-            margin: 16px 0 20px;
-            font-size: clamp(30px, 2.8vw, 44px);
-            line-height: 1.15;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .section-title {
-            font-size: clamp(23px, 2.1vw, 32px);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .services {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .services li {
-            display: flex;
-            align-items: flex-start;
-            gap: 11px;
-            font-size: clamp(20px, 1.85vw, 28px);
-            line-height: 1.25;
-            font-weight: 600;
-        }
-
-        .services .emoji {
-            width: 34px;
-            flex-shrink: 0;
-            text-align: center;
-        }
-
-        .note {
-            margin-top: 8px;
-            font-size: clamp(20px, 1.78vw, 28px);
-            line-height: 1.33;
-            color: #3a3737;
-        }
-
-        .logo-box {
+        .card {
+            background: #f5f5f0;
+            border-radius: 20px;
+            max-width: 400px;
             width: 100%;
-            aspect-ratio: 16 / 11;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header-curve {
+            background: linear-gradient(135deg, #e85a4f 0%, #d64535 100%);
+            height: 180px;
+            border-radius: 0 0 50% 50% / 0 0 30% 30%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            color: white;
+        }
+
+        .header-curve::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 55%);
+            pointer-events: none;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .brand-logo {
+            width: 86px;
+            height: 86px;
             border-radius: 14px;
-            border: 2px solid #dbcfc5;
-            background: #fff;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid rgba(255,255,255,0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 22px rgba(60, 50, 44, 0.1);
+            flex-shrink: 0;
+            transform: rotate(-2deg);
         }
 
-        .logo-box img {
+        .brand-logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .logo-fallback {
-            font-size: 80px;
-            color: #9f8f80;
+        .brand-logo-fallback {
+            font-size: 34px;
+            color: #333;
         }
 
-        .contact-head {
-            margin-top: 4px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--line);
-        }
-
-        .contact-head h2 {
-            font-size: clamp(35px, 2.7vw, 47px);
+        .company-name h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 0;
             line-height: 1;
-            margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
 
-        .contact-head p {
-            font-size: clamp(27px, 2vw, 34px);
-            line-height: 1.1;
-            font-style: italic;
-            font-weight: 600;
-            color: #3e3a3a;
+        .company-name p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.95);
+            margin-top: 5px;
+            font-weight: 700;
+            line-height: 1.15;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
         }
 
-        .contact-list {
-            list-style: none;
+        .content {
+            padding: 30px;
+            position: relative;
+        }
+
+        .tagline {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #c73e2e;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .services {
+            margin: 25px 0;
+        }
+
+        .service-item {
             display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-top: 6px;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #444;
+            font-size: 14px;
         }
 
-        .contact-list a {
-            text-decoration: none;
-            color: inherit;
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .house-graphic {
+            position: absolute;
+            top: -80px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid #c73e2e;
+        }
+
+        .contact-header {
+            color: #c73e2e;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .contact-item {
             display: flex;
+            align-items: center;
             gap: 12px;
-            align-items: flex-start;
-            font-size: clamp(23px, 1.75vw, 30px);
-            line-height: 1.2;
-            font-weight: 600;
+            margin: 12px 0;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: #c73e2e;
         }
 
         .contact-item i {
-            color: var(--accent);
-            margin-top: 3px;
-            width: 32px;
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .cta-group {
-            margin-top: auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            text-decoration: none;
+            color: #c73e2e;
+            width: 20px;
             font-size: 16px;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .quick-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
             font-weight: 700;
-            padding: 13px 14px;
-            border-radius: 11px;
+            font-size: 14px;
+            border-radius: 10px;
+            padding: 11px 10px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .btn:hover {
+        .quick-action-btn:hover {
             transform: translateY(-2px);
         }
 
-        .btn.save {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+        .quick-action-btn.whatsapp {
+            background: #25d366;
             color: white;
-            box-shadow: 0 8px 20px rgba(183, 63, 45, 0.25);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
         }
 
-        .btn.instagram {
+        .quick-action-btn.instagram {
             background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
             color: white;
-            box-shadow: 0 8px 20px rgba(131, 58, 180, 0.25);
+            box-shadow: 0 4px 14px rgba(131, 58, 180, 0.35);
         }
 
-        @media (max-width: 1100px) {
-            .flyer {
+        .instagram-profile-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 13px 12px;
+            color: white;
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            box-shadow: 0 5px 16px rgba(131, 58, 180, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .instagram-profile-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(131, 58, 180, 0.45);
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #c73e2e;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(232, 90, 79, 0.1);
+            border-radius: 10px;
+        }
+
+        .tools-decoration {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            opacity: 0.6;
+        }
+
+        .tools-decoration i {
+            font-size: 24px;
+            color: #666;
+        }
+
+        .save-contact-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #c73e2e 0%, #d64535 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .save-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(199, 62, 46, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                border-radius: 15px;
+            }
+
+            .header-curve {
+                height: 168px;
+                padding: 20px;
+            }
+
+            .brand-logo {
+                width: 72px;
+                height: 72px;
+            }
+
+            .company-name h1 {
+                font-size: 30px;
+            }
+
+            .company-name p {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .quick-actions {
                 grid-template-columns: 1fr;
-            }
-
-            .right {
-                border-left: none;
-                border-top: 6px solid var(--accent);
-            }
-
-            .left,
-            .right {
-                padding: 26px 22px;
-            }
-
-            .brand h1 {
-                font-size: 44px;
-            }
-
-            .brand p {
-                font-size: 35px;
-            }
-
-            .intro {
-                font-size: 24px;
-            }
-
-            .highlight {
-                font-size: 33px;
-            }
-
-            .services li,
-            .note,
-            .contact-item,
-            .contact-head p {
-                font-size: 22px;
-            }
-
-            .section-title,
-            .contact-head h2 {
-                font-size: 29px;
-            }
-        }
-
-        @media (max-width: 580px) {
-            body {
-                padding: 12px;
-            }
-
-            .brand h1 {
-                font-size: 38px;
-            }
-
-            .brand p {
-                font-size: 28px;
-            }
-
-            .intro,
-            .services li,
-            .note,
-            .contact-item {
-                font-size: 20px;
-            }
-
-            .highlight {
-                font-size: 28px;
-            }
-
-            .contact-head h2 {
-                font-size: 26px;
-            }
-
-            .contact-head p {
-                font-size: 21px;
             }
         }
     </style>
 </head>
 <body>
-    <main class="flyer">
-        <section class="left">
-            <div class="brand">
-                <i class="fas fa-wrench"></i>
-                <div>
-                    <h1>Nardi -</h1>
-                    <p>Hausmeister & Montagebetrieb</p>
+    <div class="card">
+        <div class="header-curve">
+            <div class="logo-section">
+                <div class="brand-logo" aria-label="Firmenlogo">
+                    <img src="logo.jpg" alt="Nardi Firmenlogo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fas fa-house brand-logo-fallback" style="display:none;"></i>
+                </div>
+                <div class="company-name">
+                    <h1>Nardi</h1>
+                    <p>Hausmeister &<br>Montagebetrieb</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="tagline">
+                Sie brauchen Hilfe im Haus,<br>
+                bei Reparaturen oder im Garten?
+            </p>
+
+            <p class="highlight">Kein Problem – ich helfe Ihnen gerne!</p>
+
+            <div class="services">
+                <div class="service-item">
+                    <span class="service-icon">🏠</span>
+                    <span>Fenster- & Haustür-Montage sowie Demontage</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🏊</span>
+                    <span>Poolreinigung</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🔨</span>
+                    <span>Renovierungsarbeiten</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🌱</span>
+                    <span>Bodenverlegung</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🪑</span>
+                    <span>Gartenarbeiten</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🛋️</span>
+                    <span>Möbelmontage & Demontage</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">❄️</span>
+                    <span>Winterdienst</span>
                 </div>
             </div>
 
-            <p class="intro">
-                Sie brauchen Hilfe im Haus, bei Reparaturen oder im Garten?
+            <p style="color: #555; font-size: 14px; line-height: 1.6; margin: 20px 0; font-style: italic;">
+                Ich erledige meine Arbeit sehr gewissenhaft, zuverlässig und sauber – so, wie ich es auch bei mir zu Hause erwarten würde.
             </p>
 
-            <p class="highlight">Kein Problem - ich helfe Ihnen gerne!</p>
+            <div class="contact-section">
+                <div class="contact-header">Nardi<br><small style="font-weight: 400;">Hausmeister/Montagebetrieb</small></div>
 
-            <h3 class="section-title">Ich biete folgende Leistungen an:</h3>
-            <ul class="services">
-                <li><span class="emoji">🏠</span><span>Fenster- & Haustür-Montage sowie Demontage</span></li>
-                <li><span class="emoji">🏊</span><span>Poolreinigung</span></li>
-                <li><span class="emoji">🪵</span><span>Renovierungsarbeiten</span></li>
-                <li><span class="emoji">🌱</span><span>Boden verlegen</span></li>
-                <li><span class="emoji">🪑</span><span>Gartenarbeiten</span></li>
-                <li><span class="emoji">🛋️</span><span>Möbelmontage & Demontage</span></li>
-                <li><span class="emoji">❄️</span><span>Winterdienst</span></li>
-            </ul>
-
-            <p class="note">
-                Ich erledige meine Arbeit sehr gewissenhaft, zuverlässig und sauber -
-                so, wie ich es auch bei mir zu Hause erwarten würde.
-            </p>
-        </section>
-
-        <section class="right">
-            <div class="logo-box" aria-label="Firmenlogo">
-                <img src="logo.jpg" alt="Logo von Nardi Hausmeister und Montagebetrieb" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <i class="fas fa-house logo-fallback" style="display:none;"></i>
-            </div>
-
-            <div class="contact-head">
-                <h2>Nardi</h2>
-                <p>Hausmeister/<br>Montagebetrieb</p>
-            </div>
-
-            <ul class="contact-list">
-                <li>
-                    <a href="tel:+4915129654421">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+49 (0) 15129654421</span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:nardi.montage@gmail.com">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>nardi.montage@gmail.com</span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://maps.google.com/?q=Friedenstraße+23,+67734+Katzweiler" target="_blank" rel="noopener noreferrer">
-                        <div class="contact-item">
-                            <i class="fas fa-location-dot"></i>
-                            <span>Friedenstraße 23<br>67734 Katzweiler</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="cta-group">
-                <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Nardi%20Hausmeister%20%26%20Montagebetrieb%0AORG:Nardi%20Hausmeister%20%26%20Montagebetrieb%0ATEL;TYPE=CELL:+4915129654421%0AEMAIL:nardi.montage@gmail.com%0AADR;TYPE=HOME:;;Friedenstraße%2023;Katzweiler;;67734;Germany%0AEND:VCARD" download="Nardi_Contact.vcf" class="btn save">
-                    <i class="fas fa-address-card"></i>
-                    Kontakt speichern
+                <a href="tel:+4915129654421" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+49 151 29654421</span>
                 </a>
-                <a href="https://www.instagram.com/nardi.montageservice" target="_blank" rel="noopener noreferrer" class="btn instagram">
-                    <i class="fab fa-instagram"></i>
-                    Instagram ansehen
+
+                <a href="mailto:nardi.montage@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>nardi.montage@gmail.com</span>
                 </a>
+
+                <a href="https://maps.google.com/?q=Friedenstraße+23,+67734+Katzweiler" target="_blank" class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Friedenstraße 23<br>67734 Katzweiler</span>
+                </a>
+
+                <div class="quick-actions">
+                    <a href="https://wa.me/4915129654421" target="_blank" class="quick-action-btn whatsapp" aria-label="WhatsApp Nachricht schreiben">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/nardi.montageservice" target="_blank" class="quick-action-btn instagram" aria-label="Instagram Profil öffnen">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Nardi%20Hausmeister%20%26%20Montagebetrieb%0AORG:Nardi%20Hausmeister%20%26%20Montagebetrieb%0ATEL;TYPE=CELL:+4915129654421%0AEMAIL:nardi.montage@gmail.com%0AADR;TYPE=HOME:;;Friedenstraße%2023;Katzweiler;;67734;Germany%0AEND:VCARD" download="Nardi_Contact.vcf" class="save-contact-btn">
+                <i class="fas fa-address-card" style="margin-right: 8px;"></i>
+                Kontakt speichern
+            </a>
+
+            <a href="https://www.instagram.com/nardi.montageservice" target="_blank" class="instagram-profile-btn" aria-label="Instagram Profil öffnen">
+                <i class="fab fa-instagram"></i>
+                Auf Instagram ansehen
+            </a>
+
+            <div class="footer-text">
+                Ich freue mich auf Ihre Anfrage!
+            </div>
+
+            <div class="tools-decoration">
+                <i class="fas fa-hard-hat"></i>
+                <i class="fas fa-hammer"></i>
+                <i class="fas fa-ruler-combined"></i>
+                <i class="fas fa-tools"></i>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
