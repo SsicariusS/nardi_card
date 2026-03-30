@@ -54,16 +54,29 @@
             gap: 15px;
         }
 
-        .wrench-icon {
-            font-size: 40px;
-            color: #333;
+        .brand-logo {
+            width: 86px;
+            height: 86px;
+            border-radius: 14px;
             background: rgba(255,255,255,0.9);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-logo-fallback {
+            font-size: 34px;
+            color: #333;
         }
 
         .company-name h1 {
@@ -300,8 +313,9 @@
     <div class="card">
         <div class="header-curve">
             <div class="logo-section">
-                <div class="wrench-icon">
-                    <i class="fas fa-wrench"></i>
+                <div class="brand-logo" aria-label="Firmenlogo">
+                    <img src="logo.jpg" alt="Nardi Firmenlogo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fas fa-house brand-logo-fallback" style="display:none;"></i>
                 </div>
                 <div class="company-name">
                     <h1>Nardi</h1>
