@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nardi Hausmeister & Montagebetrieb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e85a4f 0%, #d64535 50%, #c73e2e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: #f5f5f0;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header-curve {
+            background: linear-gradient(135deg, #e85a4f 0%, #d64535 100%);
+            height: 180px;
+            border-radius: 0 0 50% 50% / 0 0 30% 30%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            color: white;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .wrench-icon {
+            font-size: 40px;
+            color: #333;
+            background: rgba(255,255,255,0.9);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-name h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 0;
+        }
+
+        .company-name p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.95);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 30px;
+            position: relative;
+        }
+
+        .tagline {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #c73e2e;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .services {
+            margin: 25px 0;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .house-graphic {
+            position: absolute;
+            top: -80px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid #c73e2e;
+        }
+
+        .contact-header {
+            color: #c73e2e;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: #c73e2e;
+        }
+
+        .contact-item i {
+            color: #c73e2e;
+            width: 20px;
+            font-size: 16px;
+        }
+
+        .instagram-section {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .instagram-title {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            background: white;
+            margin: 0 auto;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ddd;
+            position: relative;
+        }
+
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background: 
+                repeating-linear-gradient(0deg, #333 0px, #333 3px, transparent 3px, transparent 6px),
+                repeating-linear-gradient(90deg, #333 0px, #333 3px, transparent 3px, transparent 6px);
+            background-size: 6px 6px;
+            position: relative;
+        }
+
+        .qr-code::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 25px;
+            height: 25px;
+            border: 4px solid #333;
+            background: white;
+        }
+
+        .qr-code::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            border: 4px solid #333;
+            background: white;
+        }
+
+        .instagram-icon-center {
+            position: absolute;
+            color: #e4405f;
+            font-size: 30px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .instagram-handle {
+            color: #333;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #c73e2e;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(232, 90, 79, 0.1);
+            border-radius: 10px;
+        }
+
+        .tools-decoration {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            opacity: 0.6;
+        }
+
+        .tools-decoration i {
+            font-size: 24px;
+            color: #666;
+        }
+
+        .save-contact-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #c73e2e 0%, #d64535 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .save-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(199, 62, 46, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                border-radius: 15px;
+            }
+
+            .company-name h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header-curve">
+            <div class="logo-section">
+                <div class="wrench-icon">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <div class="company-name">
+                    <h1>Nardi</h1>
+                    <p>Hausmeister &<br>Montagebetrieb</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="tagline">
+                Sie brauchen Hilfe im Haus,<br>
+                bei Reparaturen oder im Garten?
+            </p>
+
+            <p class="highlight">Kein Problem – ich helfe Ihnen gerne!</p>
+
+            <div class="services">
+                <div class="service-item">
+                    <span class="service-icon">🏠</span>
+                    <span>Fenster- & Haustür-Montage sowie Demontage</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🏊</span>
+                    <span>Poolreinigung</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🔨</span>
+                    <span>Renovierungsarbeiten</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🌱</span>
+                    <span>Boden verlegen</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🪑</span>
+                    <span>Gartenarbeiten</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🛋️</span>
+                    <span>Möbelmontage & Demontage</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">❄️</span>
+                    <span>Winterdienst</span>
+                </div>
+            </div>
+
+            <p style="color: #555; font-size: 14px; line-height: 1.6; margin: 20px 0; font-style: italic;">
+                Ich erledige meine Arbeit sehr gewissenhaft, zuverlässig und sauber – so, wie ich es auch bei mir zu Hause erwarten würde.
+            </p>
+
+            <div class="contact-section">
+                <div class="contact-header">Nardi<br><small style="font-weight: 400;">Hausmeister/Montagebetrieb</small></div>
+
+                <a href="tel:+4915129654421" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+49 151 29654421</span>
+                </a>
+
+                <a href="mailto:nardi.montage@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>nardi.montage@gmail.com</span>
+                </a>
+
+                <a href="https://maps.google.com/?q=Friedenstraße+23,+67734+Katzweiler" target="_blank" class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Friedenstraße 23<br>67734 Katzweiler</span>
+                </a>
+            </div>
+
+            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Nardi%20Hausmeister%20%26%20Montagebetrieb%0AORG:Nardi%20Hausmeister%20%26%20Montagebetrieb%0ATEL;TYPE=CELL:+4915129654421%0AEMAIL:nardi.montage@gmail.com%0AADR;TYPE=HOME:;;Friedenstraße%2023;Katzweiler;;67734;Germany%0AEND:VCARD" download="Nardi_Contact.vcf" class="save-contact-btn">
+                <i class="fas fa-address-card" style="margin-right: 8px;"></i>
+                Kontakt speichern
+            </a>
+
+            <div class="instagram-section">
+                <p class="instagram-title">Folgen Sie mir auf Instagram:</p>
+                <div class="qr-placeholder">
+                    <div class="qr-code"></div>
+                    <i class="fab fa-instagram instagram-icon-center"></i>
+                </div>
+                <p class="instagram-handle">@nardi.montageservice</p>
+            </div>
+
+            <div class="footer-text">
+                Ich freue mich auf Ihre Anfrage!
+            </div>
+
+            <div class="tools-decoration">
+                <i class="fas fa-hard-hat"></i>
+                <i class="fas fa-hammer"></i>
+                <i class="fas fa-ruler-combined"></i>
+                <i class="fas fa-tools"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
