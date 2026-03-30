@@ -208,56 +208,27 @@
             box-shadow: 0 4px 14px rgba(131, 58, 180, 0.35);
         }
 
-        .instagram-section {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 2px solid #e0e0e0;
-        }
-
-        .instagram-title {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .qr-placeholder {
-            width: 120px;
-            height: 120px;
-            background: white;
-            margin: 0 auto;
-            border-radius: 10px;
-            display: flex;
+        .instagram-profile-btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #ddd;
-            position: relative;
-            overflow: hidden;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 13px 12px;
+            color: white;
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            box-shadow: 0 5px 16px rgba(131, 58, 180, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .qr-image {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #e3e3e3;
-        }
-
-        .instagram-icon-center {
-            position: absolute;
-            color: #e4405f;
-            font-size: 30px;
-            background: white;
-            padding: 5px;
-            border-radius: 8px;
-            pointer-events: none;
-        }
-
-        .instagram-handle {
-            color: #333;
-            font-weight: 600;
-            margin-top: 10px;
-            font-size: 14px;
+        .instagram-profile-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(131, 58, 180, 0.45);
         }
 
         .footer-text {
@@ -417,14 +388,10 @@
                 Kontakt speichern
             </a>
 
-            <div class="instagram-section">
-                <p class="instagram-title">Folgen Sie mir auf Instagram:</p>
-                <div class="qr-placeholder">
-                    <img class="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fwww.instagram.com%2Fnardi.montageservice" alt="QR-Code zum Instagram-Profil von Nardi Montagebetrieb">
-                    <i class="fab fa-instagram instagram-icon-center"></i>
-                </div>
-                <p class="instagram-handle">@nardi.montageservice</p>
-            </div>
+            <a href="https://www.instagram.com/nardi.montageservice" target="_blank" class="instagram-profile-btn" aria-label="Instagram Profil öffnen">
+                <i class="fab fa-instagram"></i>
+                Auf Instagram ansehen
+            </a>
 
             <div class="footer-text">
                 Ich freue mich auf Ihre Anfrage!
