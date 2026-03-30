@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nardi Hausmeister & Montagebetrieb</title>
+    <meta name="description" content="Nardi Hausmeister & Montagebetrieb in Katzweiler. Fenster- und Türmontage, Renovierung, Gartenarbeiten, Möbelmontage, Winterdienst und mehr.">
+    <meta name="theme-color" content="#c73e2e">
+    <meta property="og:title" content="Nardi Hausmeister & Montagebetrieb">
+    <meta property="og:description" content="Zuverlässiger Hausmeister- und Montageservice in Katzweiler und Umgebung.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -167,6 +172,42 @@
             font-size: 16px;
         }
 
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .quick-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 10px;
+            padding: 11px 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .quick-action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .quick-action-btn.whatsapp {
+            background: #25d366;
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+        }
+
+        .quick-action-btn.instagram {
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(131, 58, 180, 0.35);
+        }
+
         .instagram-section {
             text-align: center;
             margin-top: 25px;
@@ -191,38 +232,15 @@
             justify-content: center;
             border: 2px solid #ddd;
             position: relative;
+            overflow: hidden;
         }
 
-        .qr-code {
+        .qr-image {
             width: 100px;
             height: 100px;
-            background: 
-                repeating-linear-gradient(0deg, #333 0px, #333 3px, transparent 3px, transparent 6px),
-                repeating-linear-gradient(90deg, #333 0px, #333 3px, transparent 3px, transparent 6px);
-            background-size: 6px 6px;
-            position: relative;
-        }
-
-        .qr-code::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 25px;
-            height: 25px;
-            border: 4px solid #333;
-            background: white;
-        }
-
-        .qr-code::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 25px;
-            height: 25px;
-            border: 4px solid #333;
-            background: white;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e3e3e3;
         }
 
         .instagram-icon-center {
@@ -232,6 +250,7 @@
             background: white;
             padding: 5px;
             border-radius: 8px;
+            pointer-events: none;
         }
 
         .instagram-handle {
@@ -299,6 +318,10 @@
             .content {
                 padding: 20px;
             }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -339,7 +362,7 @@
                 </div>
                 <div class="service-item">
                     <span class="service-icon">🌱</span>
-                    <span>Boden verlegen</span>
+                    <span>Bodenverlegung</span>
                 </div>
                 <div class="service-item">
                     <span class="service-icon">🪑</span>
@@ -376,6 +399,17 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Friedenstraße 23<br>67734 Katzweiler</span>
                 </a>
+
+                <div class="quick-actions">
+                    <a href="https://wa.me/4915129654421" target="_blank" class="quick-action-btn whatsapp" aria-label="WhatsApp Nachricht schreiben">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/nardi.montageservice" target="_blank" class="quick-action-btn instagram" aria-label="Instagram Profil öffnen">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                </div>
             </div>
 
             <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Nardi%20Hausmeister%20%26%20Montagebetrieb%0AORG:Nardi%20Hausmeister%20%26%20Montagebetrieb%0ATEL;TYPE=CELL:+4915129654421%0AEMAIL:nardi.montage@gmail.com%0AADR;TYPE=HOME:;;Friedenstraße%2023;Katzweiler;;67734;Germany%0AEND:VCARD" download="Nardi_Contact.vcf" class="save-contact-btn">
@@ -386,7 +420,7 @@
             <div class="instagram-section">
                 <p class="instagram-title">Folgen Sie mir auf Instagram:</p>
                 <div class="qr-placeholder">
-                    <div class="qr-code"></div>
+                    <img class="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fwww.instagram.com%2Fnardi.montageservice" alt="QR-Code zum Instagram-Profil von Nardi Montagebetrieb">
                     <i class="fab fa-instagram instagram-icon-center"></i>
                 </div>
                 <p class="instagram-handle">@nardi.montageservice</p>
